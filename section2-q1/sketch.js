@@ -1,7 +1,7 @@
 // 小手調べ
 function setup()
 {createCanvas(1000, 1000);
-  for(let i = 0; i < 9; i++){
+  for(let i = 0; i < 10; i++){
     // BLANK[1]
     let x=i*10+10
     noFill();
