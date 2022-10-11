@@ -5,7 +5,7 @@ function setup()
     // BLANK[1]
     let x=i*10+10
     noFill();
-    if(i<5){stroke(0, 0, 255)}
+    if(i<5){stroke(0, 0, 255)}//青
     else{stroke(255, 0, 0)}
     ;
   ellipse(100, 100, x);
