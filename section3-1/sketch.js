@@ -1,6 +1,6 @@
 // テキスト「リサイズするプログラムを作る」
 function setup(){
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowWidth);
 }
 
 function windowResized(){

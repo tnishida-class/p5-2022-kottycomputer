@@ -1,38 +1,46 @@
-// テキスト「アニメーションの基本」
-let x, y, vx, vy;
-const g = 1; // 重力加速度
-const vyMax = 30;
+const g = 1;     // 重力（いろいろな値を試してみましょう）
+const jump = 20; // ジャンプ力（いろいろな値を試してみましょう）
+const ground = 20;
+const size = 20;
 
-function setup(){
-  createCanvas(windowWidth, windowHeight);
+let x, y, vy;
+
+function setup() {
+  createCanvas(400, 400);
+  
   x = width / 2;
-  y = height / 2;
-  vx = 8;
-  vy = 8;
+  y = height - ground - size / 2;
+  vy = 0;
 }
 
-function draw(){
-  background(160, 192, 255);
-  ellipse(x, y, 20, 20);
-  x += vx;
+function draw() {
+  background(220);
+  
+  let gy = height - ground;
+  line(0, gy, width, gy); // 地面の線
+  
+  ellipse(x, y, size, size);
+  
   y += vy;
 
-  // 重力（コメント機能でオンオフ切り替えて実行してみましょう）
-  vy = constrain(vy + g, -vyMax, vyMax);
-
-  // 端の処理パターン (1) 反対側から出てくる
-  // if(x > width){ x = 0; }
-  // else if(x < 0){ x = width; }
-  // if(y > height){ y = 0; }
-  // if(y < 0){ y = height; }
-
-　// 端の処理パターン (2) 跳ね返る
-  if(x < 0 || x > width){ vx = -1 * vx; }
-  if(y > height){ vy = -1 * vy; }
-  x = constrain(x, 0, width);
-  y = constrain(y, 0, height);
+  
+  if(y < height - ground - size / 2){ // 地面より上、つまり空中にいる
+    vy += g; // 下方向に重力の影響で加速する
+  }
+  else{
+    vy = 0;
+    y = height - ground - size / 2;
+  }
 }
+ 
+function keypressed(){if(key == " "){
+  if(y >= height - ground - size / 2){ // 地面にいるときだけジャンプできる（この条件をなくせば空中ジャンプが可能になります）
+    vy = -jump;     
+  }}
+  else if(keyCode == LEFT_ARROW){ x -= 5; } // 文字以外のキーは keyCode を使う
+  else if(keyCode == RIGHT_ARROW){ x+= 5; }
+  else if(keyCode == DOWN_ARROW){ y += 5; }
+  else if(keyCode == UP_ARROW){ y -= 5; }
+  else if(key == "A"){ x+= 10; } // 文字キーの場合は key を使う
 
-function windowResized(){
-  resizeCanvas(windowWidth, windowHeight);
 }
