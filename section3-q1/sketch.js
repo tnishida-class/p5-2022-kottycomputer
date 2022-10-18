@@ -10,7 +10,7 @@ function setup(){
   y = height / 2;
   vx = 2;
   vy = 2; 
-
+ 
 }
 
 function draw(){
