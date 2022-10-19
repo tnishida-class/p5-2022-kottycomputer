@@ -11,8 +11,9 @@ function setup() {
   x = width / 2;
   y = height - ground - size / 2;
   vy = 0;
+  
 }
-
+ 
 function draw() {
   background(220);
   
