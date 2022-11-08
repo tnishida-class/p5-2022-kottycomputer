@@ -2,15 +2,13 @@
 // 吹き出しの位置、背景色 etc. を関数 balloon の引数で指定できるようにしてみよう
 // 吹き出しにしっぽを付けてみよう
 function setup(){
-  createCanvas(500, 500);
+  createCanvas(1000, 1000);
   background(255);
-  balloon("kottycomputer",120,50,125,0);
+  balloon("kottycomputer",200,90);
   stroke(0,128,128);
   fill(0,128,128);
-  line(210,260,270,260)
-  line(270, 260, 170, 330);
-  line(210, 260, 170, 330);
-  triangle(210, 259, 270, 260, 170, 330);
+  
+  
   }
 
 
@@ -22,6 +20,7 @@ function balloon(t,x,y)
   fill(0,128,128);
   noStroke(0);
   ellipse(x+140, y+120, w + p * 2, h + p *1.7);
+  triangle(x+110, y+209, x+170, y+210, x+70, y+280);
   fill(255);
   text(t, p+x, h + p+y);
 }
