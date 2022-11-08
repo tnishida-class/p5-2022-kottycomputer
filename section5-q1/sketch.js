@@ -4,7 +4,7 @@
 function setup(){
   createCanvas(1000, 1000);
   background(255);
-  balloon("kottycomputer",200,90);
+  balloon("kottycomputer",20,90);
   stroke(0,128,128);
   fill(0,128,128);
   
