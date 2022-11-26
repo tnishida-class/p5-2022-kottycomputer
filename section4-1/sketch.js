@@ -15,7 +15,7 @@ function setup(){
   for(let i = 0; i < scores.length; i++){
     sum += scores[i];
   }
-
+  
   console.log(sum);
 
   // ここから平均・最大・最小を求めます
