@@ -2,6 +2,7 @@
 let speed;
 let cycle;
 let sel;
+let sel2;
 
 
 function setup(){
@@ -16,14 +17,20 @@ function setup(){
   vy = 2; 
 
   textAlign(CENTER);
-  stroke(10)
+  stroke(30)
   sel = createSelect();
   sel.position(200, 200);
   sel.option('Is it a hula hoop...?');
   sel.option('It is a donut!!!!');
   sel.changed(mySelectEventssss);
 
-
+  textAlign(CENTER);
+  stroke(10)
+  sel2 = createSelect();
+  sel2.position(20, 70);
+  sel2.option('矢印で生き物を動かしてね');
+  sel2.option('表情に注目♡');
+  sel2.changed(mySelectEventssss);
 }
 
 
@@ -90,5 +97,10 @@ function draw(){
 
 function mySelectEventssss() {
   let item = sel.value();
+  text("it's a " + item + '!', 100, 100);
+}
+
+function mySelectEventssss2() {
+  let item = sel2.value();
   text("it's a " + item + '!', 100, 100);
 }
