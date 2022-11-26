@@ -3,6 +3,7 @@ let speed;
 let cycle;
 let sel;
 
+
 function setup(){
   createCanvas(500, 500, WEBGL);
   describe('a rotating white torus');
@@ -20,8 +21,9 @@ function setup(){
   sel.position(200, 200);
   sel.option('Is it a hula hoop...?');
   sel.option('It is a donut!!!!');
-  
   sel.changed(mySelectEventssss);
+
+
 }
 
 
