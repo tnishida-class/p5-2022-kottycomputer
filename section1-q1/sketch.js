@@ -1,10 +1,10 @@
 // 練習問題：神戸市のマーク
 function setup(){
-  createCanvas(200, 200);
-  background(255);
+  createCanvas(100, 100);
+  background(250);
 
   // 空欄を埋めて神戸市のロゴマークを完成させよう
-  noFill();
+  noFill(123);
   strokeWeight(25);
   strokeCap(SQUARE);
   arc(100 + 25, 100, 100, 100, QUARTER_PI * 3, QUARTER_PI * 3 + PI);

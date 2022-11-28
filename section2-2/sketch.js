@@ -9,11 +9,14 @@ function setup() {
   background(196);
   for(let i = 0; i < 9; i++){
     // 変えるのはここから
-    if(i % 2 == 0){
-      strokeWeight(2);
+    if(i < 3){
+      strokeWeight(1);
+    }
+    else if(i < 6){
+      strokeWeight(5);
     }
     else{
-      strokeWeight(1);
+      strokeWeight(9);
     }
     // ここまでの間になります
     let x = i * 10 + 10;
