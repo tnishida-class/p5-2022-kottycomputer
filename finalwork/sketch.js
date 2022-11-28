@@ -31,8 +31,6 @@ function setup(){
   sel2.option('矢印で生き物を動かしてね');
   sel2.option('表情に注目♡');
   sel2.changed(mySelectEventssss);
-
-  wow("woooow",100,130);
 }
 
 
@@ -59,7 +57,7 @@ function draw(){
   ellipse(x+30,y-10,4)
   ellipse(x+15,y-10,4)
 
-  speed = (speed+5) % cycle;}
+  speed = (speed+8) % cycle;}
   else if(x>0){
   
     fill(10)
@@ -69,7 +67,7 @@ function draw(){
   fill(237, 237, 237)
   ellipse(x,y-10,4)
   ellipse(x-15,y-10,4)
-  speed = (speed+5) % cycle;
+  speed = (speed+8) % cycle;
 
   }
   }
@@ -123,17 +121,5 @@ function mySelectEventssss() {
 function mySelectEventssss2() {
   let item = sel2.value();
   text( item + '♡', 100, 100);
-}
-
-function wow(t,u,v)
-{
-  let w = textWidth(t);
-  let h = textAscent() + textDescent();
-  let p = 100;
-  fill(0,128,128);
-  noStroke(0);
-  ellipse(u+140, v+120, w + p * 2, h + p *1.7);
-  triangle(u+110, v+209, u+170, v+210, u+70, v+280);
-  fill(255);
-  text(t, p+u+15, h + p+v);
+  stroke(30)
 }
