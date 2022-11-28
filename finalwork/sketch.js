@@ -102,5 +102,5 @@ function mySelectEventssss() {
 
 function mySelectEventssss2() {
   let item = sel2.value();
-  text("it's a " + item + '!', 100, 100);
+  text( item + '♡', 100, 100);
 }
