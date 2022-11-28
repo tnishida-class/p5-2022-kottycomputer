@@ -39,28 +39,42 @@ function setup(){
 function draw(){
   
   background(247, 229, 87);
-  speed = (speed+1.5) % cycle;
+  
   let size = -speed;
  
  
 
-  if(x>-90&&x<90&&y>-90&&y<90){
+  if(x>-110&&x<110&&y>-90&&y<90){
     ellipse(x, y, size+200);
-    
     fill(209, 6, 6)
     ellipse(x+5,y+15,50,30)
+    if(x<0){
     fill(10)
+  ellipse(x+30,y-10,10)
   ellipse(x+15,y-10,10)
-  ellipse(x,y-10,10)
 
   fill(237, 237, 237)
+  ellipse(x+30,y-10,4)
   ellipse(x+15,y-10,4)
-  ellipse(x,y-10,4)
 
+  speed = (speed+5) % cycle;}
+  else if(x>0){
+  
+    fill(10)
+  ellipse(x,y-10,10)
+  ellipse(x-15,y-10,10)
+
+  fill(237, 237, 237)
+  ellipse(x,y-10,4)
+  ellipse(x-15,y-10,4)
+  speed = (speed+5) % cycle;
+
+  }
   }
 
   else{
-    
+    speed = (speed+1.5) % cycle;
+
     ellipse(x, y, size+150);
     fill(209, 6, 6)
     ellipse(x+5,y,10,7)
@@ -91,6 +105,8 @@ function draw(){
   rotateY(frameCount * 0.01);
   torus(40, 20);
   noStroke(0);
+
+  
 }
  
 
@@ -98,6 +114,8 @@ function draw(){
 function mySelectEventssss() {
   let item = sel.value();
   text("it's a " + item + '!', 100, 100);
+  stroke(10)
+  
 }
 
 function mySelectEventssss2() {
